@@ -49,6 +49,12 @@ export function Home() {
       return;
     }
 
+    // se existir dados em endedAt signfica que a sala foi encerrada
+    if (roomRef.val().endedAt) {
+      alert('Room already closed.');
+      return;
+    }
+
     //se a sala existir, navegar até ela
     history.push(`/rooms/${roomCode}`);
   }
